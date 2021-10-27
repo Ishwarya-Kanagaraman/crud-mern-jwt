@@ -1,0 +1,32 @@
+.navbar{
+    margin:0;
+    padding:0;
+    background-color: black;
+}
+
+.navlists{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    margin: 6px;
+    padding:13px;
+    list-style-type: none;
+}
+@media screen and (max-width:500px){
+    .listLink{
+        margin:0px 10px
+    }
+}
+.listLink{
+    color:white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    margin:0px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.listLink:hover{
+    color:aquamarine;
+}
