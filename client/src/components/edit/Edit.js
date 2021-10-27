@@ -24,7 +24,7 @@ export default function Edit() {
       };
       const updateMovie = async () => {
         await axios
-          .patch(`http://localhost:4001/movies/update/`,  
+          .patch(`https://jwt-crud-mern.herokuapp.com/movies/update/`,  
           
              
            updatingData )

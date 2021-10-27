@@ -20,7 +20,7 @@ export default function Create() {
    console.log(updatingData)
     const createMovie=async()=>{
        
-       await axios.post(`http://localhost:4001/movies/`,updatingData )
+       await axios.post(`https://jwt-crud-mern.herokuapp.com/movies/`,updatingData )
         .then(res=>console.log(res))
         history.push("/movies")
     }

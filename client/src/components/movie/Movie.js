@@ -8,7 +8,7 @@ export default function Movie() {
   const token=localStorage.getItem("token") ;
 
   const getMovies=()=>{
-    fetch("http://localhost:4001/movies", {
+    fetch("https://jwt-crud-mern.herokuapp.com/movies", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -25,7 +25,7 @@ export default function Movie() {
 
   const deleteMovie=(movie)=>{
       alert(`Are you sure want to delete this movie ${movie.movie_name}?`)
-      axios.delete(`http://localhost:4001/movies/${movie._id}?token=${token}`).then(res=>console.log(res))
+      axios.delete(`https://jwt-crud-mern.herokuapp.com/movies/${movie._id}?token=${token}`).then(res=>console.log(res))
       getMovies();
 
   }
@@ -47,11 +47,11 @@ export default function Movie() {
             <p className="desc">{movie.movie_desc}</p>
             <p className="duration">{movie.duration}</p>
             <div className="butonDiv">
-              <button type="button" class="btn btn-warning">
+              <button type="button" className="btn btn-warning">
                   <Link className="editLink" to={token ? {pathname:"/edit",movie:movie} : "/login"}>
                 Edit</Link>
               </button>
-              <button type="button" class="btn btn-danger" onClick={()=>token ? deleteMovie(movie) : history.push("/login")}>
+              <button type="button" className="btn btn-danger" onClick={()=>token ? deleteMovie(movie) : history.push("/login")}>
                 Delete
               </button>
             </div>
